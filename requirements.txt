@@ -1,0 +1,8 @@
+decorator==4.2.1
+jsonpatch==1.21
+jsonpath-ng==1.4.3
+jsonpointer==2.0
+jsonschema==2.6.0
+pkg-resources==0.0.0
+ply==3.11
+six==1.11.0
