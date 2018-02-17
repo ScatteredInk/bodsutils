@@ -11,6 +11,13 @@ def find_matching_paths(json, jsonpexpr = '$..id'):
     return [str(match.full_path) for match in jsonpath_expr.find(json)]
 
 def json_paths_to_json_patch_paths(paths):
+    """
+    Change JSONPath to JSON patch paths.
+
+    Note: The JSONPatch class uses JSONPath under the hood anyway 
+    so this is pointless. You can just make a list of paths direct 
+    and wrap it.
+    """
     patch_paths = []
     for path in paths:
         p = str.replace(path, ".", "/")
@@ -42,6 +49,9 @@ def replace_uuids(json):
     Replace the uuids in each 'id' element.
     Assumes a Beneficial Ownership Data Standard object, 
     and so exlcudes id fields within an 'identifiers' object.
+
+    This will only work with nested format. Will need another to link 
+    statement references for JSONLines serialization.
     """
     # find matching JSON Paths
     matches = find_matching_paths(json)
