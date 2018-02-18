@@ -3,6 +3,8 @@
 """Main module."""
 import uuid
 import json
+import os
+
 import jsonpatch
 from jsonschema import validate, Draft4Validator
 from jsonpath_ng import jsonpath, parse
@@ -14,7 +16,9 @@ def bods_schema():
     BODS schema fixture.
     Version is currently dependent on the submodule checked out.
     '''
-    with open('./data-standard/schema/beneficial-ownership-statements.json', 'r') as f:
+    base_path = os.path.abspath(os.path.dirname(__file__))
+    path = os.path.join(base_path, "../data-standard/schema/beneficial-ownership-statements.json")
+    with open(path, 'r') as f:
       schema = json.load(f)
     return schema
 
