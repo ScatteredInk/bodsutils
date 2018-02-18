@@ -2,9 +2,28 @@
 
 """Main module."""
 import uuid
+import json
 import jsonpatch
-from jsonschema import validate
+from jsonschema import validate, Draft4Validator
 from jsonpath_ng import jsonpath, parse
+
+
+
+def bods_schema():
+    '''
+    BODS schema fixture.
+    Version is currently dependent on the submodule checked out.
+    '''
+    with open('./data-standard/schema/beneficial-ownership-statements.json', 'r') as f:
+      schema = json.load(f)
+    return schema
+
+def test_valid_bods(bods_json, schema):
+    '''Test if fixture is valid BODS JSON.'''
+    v = Draft4Validator(schema)
+    for error in sorted(v.iter_errors(bods_json), key=str):
+      print(error.message)
+    assert v.is_valid(bods_json)
 
 def find_matching_paths(json, jsonpexpr = '$..id'):
     jsonpath_expr = parse(jsonpexpr)
