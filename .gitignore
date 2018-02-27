@@ -86,8 +86,12 @@ celerybeat-schedule
 # virtualenv
 .venv
 venv/
+.veprod/
 ENV/
 .ve/
+
+#Exploratory
+Notebooks/
 
 # Spyder project settings
 .spyderproject
