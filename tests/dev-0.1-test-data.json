@@ -1,0 +1,70 @@
+{ "version": "0.1",
+  "statementGroups":[
+    {
+
+      "statementID":"265fad50-ac77-4703-9aa6-0e6523f23767",
+      "beneficialOwnershipStatements":[
+        {
+          "statementID":"166ad328-205e-44d3-928b-23e4bf44d197",
+          "subject": {
+            "subjectEntity": {
+                "statementID": "4bbe9c5f-cb4a-435c-9abe-9fc6f091506b",
+                "type": "entityStatement"
+            }
+          },
+          "interestedParty": {
+            "interestedPerson": {
+                "statementID": "c6aa1282-166a-47e6-a6c0-4be732aadf61",
+                "type": "personStatement"
+            }
+          }
+        },
+        {
+          "statementID":"d3b445b0-d49d-407b-83f3-274d35d802eb",
+          "subject": {
+            "subjectEntity": {
+                "statementID": "4bbe9c5f-cb4a-435c-9abe-9fc6f091506b",
+                "type": "entityStatement"
+            }
+          },
+          "interestedParty": {
+            "interestedEntity": {
+                "statementID": "5765e5c7-3d18-4099-a188-56648e7315ac",
+                "type": "entityStatement"
+            }
+          }
+        }
+      ],
+      "entityStatements": [
+         {
+            "statementID":"166ad328-205e-44d3-928b-23e4bf44d197",
+            "type":"registeredEntity",
+            "name": "OWNED COMPANY",
+            "identifiers":[
+              {
+                "scheme":"GB-COH",
+                "id":"00990099"
+              }
+            ]
+          },
+          {
+            "statementID": "5765e5c7-3d18-4099-a188-56648e7315ac",
+            "type": "registeredEntity",
+            "name": "HOLDING COMPANY",
+            "identifiers": [
+                {
+                    "scheme": "GB-COH",
+                    "id": "11111111"
+                }
+            ]
+          }
+      ],
+      "personStatements": [
+        {
+            "statementID": "c6aa1282-166a-47e6-a6c0-4be732aadf61",
+            "name": "Natural Person Owner"
+        }
+      ]
+    }
+  ]
+}
